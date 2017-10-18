@@ -144,3 +144,29 @@ comparing real DOM to virtual DOM is less expensive than recreating the real DOM
 
 Virtual DOM is efficient enough to create a copy of the actual DOM. Everything is calculated in javascript land
 Vitual DOM allows us to manipulate the tree in pure JS until we let the FWK to do the actual updates
+
+
+render(h) {}   //hyperscript <= hyper text <= html
+
+
+
+**Functional components**
+When?
+Every component has a cost. So when used in a list of 1000 items. 1000 Compontents with its own lifecycle are created.
+
+1. First build your app
+2. Find leaf components/ if it does not have private state
+3. then make it functional components so you have imporove performance 
+
+**Async components**
+when using many async components
+then screen loads half blank and then components pop up
+not so good
+solution --> use async component to wrap normal component
+
+**High-order Components**
+wrap for example a vue transition in own my-transition component to not have to write the same effect everywhere lake a fade or bounce...
+
+**Abstract component**
+
+

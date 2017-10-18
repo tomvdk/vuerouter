@@ -34,8 +34,8 @@ const Plugin = {
     })
   }
 }
-Vue.use(Plugin)
-export default {
+  Vue.use(Plugin)
+  export default {
   name: 'app',
   data() {
     return {
