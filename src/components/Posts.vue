@@ -9,7 +9,7 @@
                     <router-link :to="'/posts/post/' + post.id">{{post.title}}
                     </router-link>
                 </h2>
-            {{post.body}}</p>
+            <span v-color="color">{{post.body}}</span></p>
         </li>
         <router-view></router-view>
        
@@ -20,6 +20,26 @@
 </template>
 
 <script>
+
+
+import Vue from 'vue'
+
+  Vue.directive('color', 
+    { 
+        bind(el, binding, vnode)
+        { 
+            console.log(vnode)
+            el.style.color = binding.value
+        },
+    inserted(){ },
+    update() { },
+    componentUpdated() { },
+    unbind() {}
+    })
+
+
+
+
 import axios from 'axios'
 
   export default {
@@ -27,7 +47,8 @@ import axios from 'axios'
   data () {
     return {
         posts: [],
-        isLoading: true
+        isLoading: true,
+        color: 'red'
     }
   },
   beforeRouteEnter(to, from, next){
